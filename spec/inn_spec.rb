@@ -5,6 +5,7 @@ describe Inn do
   let(:gildedrose) {Inn.new}
   let(:backstagepass1) {BackstagePasses.new("Gunsandroses", 7, 5)}
   let(:backstagepass2) {BackstagePasses.new("Metallica", 3, 15)}
+  let(:items) {gildedrose.items}
     
   it "Can be created with name" do
     expect(backstagepass1.name).to eq("Gunsandroses")
@@ -38,7 +39,7 @@ describe Inn do
 
     it "decreases sell in date by 1" do
       gildedrose.update_quality
-      expect(backstagepass1.sell_in).to eq(6)
+      expect(items[0].sell_in).to eq(6)
     end
   end
 
@@ -46,6 +47,11 @@ describe Inn do
     before :each do
       gildedrose.add_item(backstagepass1)
       gildedrose.add_item(backstagepass2)
+      gildedrose.update_quality
+    end
+
+    it "increases pass quality by 2 when 10 days or less left" do
+      expect(items[0].quality).to eq(7)
     end
   end
 end

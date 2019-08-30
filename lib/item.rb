@@ -22,8 +22,4 @@ class Item
   def increase_quality
     @quality > 50 ? errors : @quality += 1
   end
-
-  def decrease_quality
-    @quality - 1
-  end
 end

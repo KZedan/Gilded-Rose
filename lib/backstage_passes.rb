@@ -2,6 +2,7 @@ require_relative 'item'
 
 class BackstagePasses < Item
   def update_quality
+    decrease_sell_in
     pass_quality
   end
 

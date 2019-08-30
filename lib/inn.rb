@@ -1,8 +1,8 @@
 class Inn
   attr_reader :items
-  
+
   def initialize
-    @items = []
+  p  @items = []
   end
 
   def add_item(item)
@@ -11,7 +11,7 @@ class Inn
   
   def update_quality
     @items.each do |item|
-      p item
+      item.update_quality
     end
   end
 
