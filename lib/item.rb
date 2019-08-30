@@ -7,10 +7,6 @@ class Item
     @quality = quality
   end
 
-  def to_s
-    "#{@name}, #{@sell_in}, #{@quality}"
-  end
-
   private
 
   def errors
@@ -20,5 +16,9 @@ class Item
 
   def increase_quality
     @quality > 50 ? errors : @quality += 1
+  end
+
+  def decrease_quality
+    @quality - 1
   end
 end
